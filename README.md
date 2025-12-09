@@ -45,7 +45,7 @@ The software, data available at [Air Quality Dispersion Modeling - Related Model
 Pull the image
 
 ```
-docker pull haitamlaarabi/aermod_mmif:latest
+docker pull haitamlaarabi/aermod_mmif:1.0
 ```
 
 Start Container
@@ -54,7 +54,7 @@ Start Container
 docker run --rm \
   -v <path/to/your/aermod or mmif/data>:/data \
   --name aermod_mmif \
-  haitamlaarabi/aermod_mmif:latest <aermod or mmif> <config from data folder>
+  haitamlaarabi/aermod_mmif:1.0 <aermod or mmif> <config from data folder>
 ```
 
 Notes:
@@ -75,7 +75,7 @@ Your input files go in the mounted folders, results appear in the same locations
 docker run --rm \
 	-v /home/username/aermod_test:/data \
     --name aermod_mmif \
-    haitamlaarabi/aermod_mmif:latest aermod olm.inp
+    haitamlaarabi/aermod_mmif:1.0 aermod olm.inp
 ```
 * Execution should produce lines like `+Now Processing Data For Day No.  X of 1999`
 
@@ -89,5 +89,8 @@ In order to build the docker image:
 ```
 docker build . -t <image tag>
 ```
+
+Notes:
+- The current docker image contains Aermod v23132. 
 
 
